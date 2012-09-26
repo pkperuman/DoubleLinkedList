@@ -1,3 +1,4 @@
+ 
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -98,7 +99,7 @@ namespace LinkedList
         {
             get { 
                 if (length == 0)
-              {
+	            {
                 throw InvalidOperationException();
                 }
                 else
@@ -139,7 +140,7 @@ namespace LinkedList
             }
             else
             {
-                Node<T> cursor = tail;
+                Node<T> cursor = head;
                 Node<T> result = cursor.getnext();
                 result.getnext().setprev(result.getprev());
                 result.getprev().setnext(result.getnext());
@@ -230,8 +231,10 @@ namespace LinkedList
             newList.AddLast("Eugene");
             newList.AddLast("David");
             newList.AddLast("Tom");
+            newList.RemoveLast();
             Console.WriteLine(newList.First);
             Console.WriteLine(newList.Last);
+            Console.WriteLine(newList.Count);
             Console.ReadLine();
         }
     }
