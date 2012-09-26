@@ -1,4 +1,7 @@
- 
+                                                                     
+                                                                     
+                                                                     
+                                             
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -113,22 +116,22 @@ namespace LinkedList
         public void AddFirst(T element)
         {
             Node<T> cursor = head;
-            Node<T> Temp = new Node<T>(element);
-            Temp.setprev(cursor);
-            Temp.setnext(cursor.getnext());
-            cursor.setnext(Temp);
-            cursor.getnext().setprev(Temp);
+            Node<T> newNode = new Node<T>(element);
+            newNode.setprev(cursor);
+            newNode.setnext(cursor.getnext());
+            cursor.setnext(newNode);
+            cursor.getnext().setprev(newNode);
             length++;
         }
 
         public void AddLast(T element)
         {
             Node<T> cursor = tail;
-            Node<T> Temp = new Node<T>(element);
-            Temp.setnext(cursor);
-            Temp.setprev(cursor.getprev());
-            cursor.setprev(Temp);
-            cursor.getprev().setnext(Temp);
+            Node<T> newNode = new Node<T>(element);
+            newNode.setnext(cursor);
+            newNode.setprev(cursor.getprev());
+            cursor.setprev(newNode);
+            cursor.getprev().setnext(newNode);
             length++;
         }
 
